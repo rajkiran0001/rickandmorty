@@ -37,19 +37,21 @@ function Search() {
 
   useEffect(() => {
     setFilteredCountries(
-      countries.filter((country) =>
-        country.name.toLowerCase().includes(search.toLowerCase())
+      countries.filter(
+        (country) =>
+          country.name.toLowerCase().includes(search.toLowerCase()) &&
+          country.status.toLowerCase().includes(status.toLowerCase())
       )
     );
-  }, [search, countries]);
+  }, [search, status, countries]);
 
-  useEffect(() => {
-    setFilteredCountries(
-      countries.filter((country) =>
-        country.status.toLowerCase().includes(status.toLowerCase())
-      )
-    );
-  }, [status, countries]);
+  // useEffect(() => {
+  //   setFilteredCountries(
+  //     countries.filter((country) =>
+  //       country.status.toLowerCase().includes(status.toLowerCase())
+  //     )
+  //   );
+  // }, [status, countries]);
 
   const fetchItems = (page) => {
     axios
