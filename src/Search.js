@@ -6,7 +6,7 @@ function Search() {
   const [countries, setCountries] = useState([]);
   const [loading, setLoading] = useState(false);
   const [search, setSearch] = useState("");
-  const [species, setSpecies] = useState("");
+  const [status, setSpecies] = useState("");
   const [one, setDateOne] = useState("");
   const [two, setDateTwo] = useState("");
   const [filteredCountries, setFilteredCountries] = useState([]);
@@ -35,16 +35,6 @@ function Search() {
       });
   }, []);
 
-  // useEffect(() => {
-  //   setFilteredCountries(
-  //     countries.filter(
-  //       (country) =>
-  //         country.name.toLowerCase().includes(search.toLowerCase()) ||
-  //         country.species.toLowerCase().includes(search.toLowerCase())
-  //     )
-  //   );
-  // }, [search, countries]);
-
   useEffect(() => {
     setFilteredCountries(
       countries.filter((country) =>
@@ -56,19 +46,10 @@ function Search() {
   useEffect(() => {
     setFilteredCountries(
       countries.filter((country) =>
-        country.name.toLowerCase().includes(search.toLowerCase())
+        country.status.toLowerCase().includes(status.toLowerCase())
       )
     );
-  }, [species, countries]);
-
-  // useEffect(() => {
-  //   setFilteredCountries(countries.filter((country) => country.created >= one));
-  // }, [one, countries]);
-
-  // useEffect(() => {
-  //   setFilteredCountries(countries.filter((country) => country.created >= two));
-  // }, [two, countries]);
-  // console.log(one, two);
+  }, [status, countries]);
 
   const fetchItems = (page) => {
     axios

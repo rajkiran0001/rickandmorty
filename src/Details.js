@@ -33,7 +33,7 @@ function Details(route) {
         {data.species} <span className="status">({data.status})</span>
       </div>
       <div className="location">
-        <i class="fas fa-map-marker" /> {data.location.name}
+        <i className="fas fa-map-marker" /> {data.location.name}
       </div>
     </div>
   );
