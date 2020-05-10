@@ -16,6 +16,7 @@ function App() {
       <Router>
         <Search path="/" />
         <Details path="/details/:id" />
+        <Search path="/charecter/page/:id" />
       </Router>
     </div>
   );
