@@ -1,7 +1,7 @@
 import React from "react";
 import { Router, Link } from "@reach/router";
-import Search from "./Search";
-import Details from "./Details";
+import Search from "./components/Search";
+import Details from "./components/Details";
 import "./App.css";
 import "./fonts.css";
 

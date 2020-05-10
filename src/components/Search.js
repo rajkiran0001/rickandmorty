@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Link } from "@reach/router";
-
+import CountryDetail from "./CountryDetails";
 function Search() {
   const [countries, setCountries] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -100,12 +99,12 @@ function Search() {
       <form onSubmit={handleSubmit}>
         <input
           type="text"
-          placeholder="First Date"
+          placeholder="2017-11-04"
           onChange={(e) => setDateOne(e.target.value)}
         />
         <input
           type="text"
-          placeholder="Second Date"
+          placeholder="2017-11-05"
           onChange={(e) => setDateTwo(e.target.value)}
         />
         <button type="submit">Search</button>
@@ -122,26 +121,5 @@ function Search() {
     </div>
   );
 }
-
-const CountryDetail = (props) => {
-  const { name, image, species, status, id, created } = props;
-  return (
-    <>
-      <Link to={`/details/${id}`}>
-        <p>
-          <img
-            src={image}
-            alt={name}
-            style={{ width: "20px", height: "20px" }}
-          />
-        </p>
-        <p>name: {name}</p>
-        <p>species: {species}</p>
-        <p>status: {status}</p>
-        <p>created: {created}</p>
-      </Link>
-    </>
-  );
-};
 
 export default Search;
